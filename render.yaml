@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: audio-perifoneo
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_BUCKET
+        sync: false
+      - key: SUPABASE_AUDIO_FOLDER
+        value: promos
+      - key: ADMIN_PASSWORD
+        sync: false
